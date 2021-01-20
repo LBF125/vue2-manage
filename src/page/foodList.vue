@@ -1,6 +1,5 @@
 <template>
     <div class="fillcontain">
-        <head-top></head-top>
         <div class="table_container">
             <el-table
                 :data="tableData"
@@ -162,7 +161,6 @@
 </template>
 
 <script>
-    import headTop from '../components/headTop'
     import {baseUrl, baseImgPath} from '@/config/env'
     import {getFoods, getFoodsCount, getMenu, updateFood, deleteFood, getResturantDetail, getMenuById} from '@/api/getData'
     export default {
@@ -215,9 +213,6 @@
         		return specs
         	}
         },
-    	components: {
-    		headTop,
-    	},
         methods: {
             async initData(){
                 try{

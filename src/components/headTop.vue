@@ -12,6 +12,9 @@
 				<el-dropdown-item command="signout">退出</el-dropdown-item>
 			</el-dropdown-menu>
 		</el-dropdown>
+<!--        <span>-->
+<!--            {{ user_data.adminInfo.user_name}}-->
+<!--        </span>-->
     </div>
 </template>
 
@@ -24,12 +27,15 @@
     	data(){
     		return {
     			baseImgPath,
+                user_data: {}
     		}
     	},
     	created(){
     		if (!this.adminInfo.id) {
     			this.getAdminData()
     		}
+            this.user_data = this.$store.state
+            console.log(this.user_data.adminInfo)
     	},
     	computed: {
     		...mapState(['adminInfo']),
@@ -62,12 +68,13 @@
 <style lang="less">
 	@import '../style/mixin';
 	.header_container{
-		background-color: #EFF2F7;
+		background-color: #fff;
 		height: 60px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding-left: 20px;
+        border-bottom: 1px solid #7B7D7E;
 	}
 	.avator{
 		.wh(36px, 36px);

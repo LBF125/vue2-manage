@@ -3,8 +3,8 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
+const layout = r => require.ensure([], () => r(require('@/components/layout')), 'layout');
 const login = r => require.ensure([], () => r(require('@/page/login')), 'login');
-const manage = r => require.ensure([], () => r(require('@/page/manage')), 'manage');
 const home = r => require.ensure([], () => r(require('@/page/home')), 'home');
 const addShop = r => require.ensure([], () => r(require('@/page/addShop')), 'addShop');
 const addGoods = r => require.ensure([], () => r(require('@/page/addGoods')), 'addGoods');
@@ -28,7 +28,7 @@ const routes = [
 	},
 	{
 		path: '/manage',
-		component: manage,
+		component: layout,
 		name: '',
 		children: [{
 			path: '',

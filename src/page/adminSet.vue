@@ -1,6 +1,5 @@
 <template>
     <div class="fillcontain">
-        <head-top></head-top>
         <header class="admin_title">管理员信息</header>
         <div class="admin_set">
             <ul>
@@ -27,14 +26,13 @@
                       <img v-if="adminInfo.avatar" :src="baseImgPath + adminInfo.avatar" class="avatar">
                       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
-                </li>    
+                </li>
             </ul>
         </div>
     </div>
 </template>
 
 <script>
-	import headTop from '../components/headTop'
     import {mapState} from 'vuex'
     import {baseUrl, baseImgPath} from '@/config/env'
 
@@ -45,9 +43,6 @@
                 baseImgPath,
             }
         },
-    	components: {
-    		headTop,
-    	},
         computed: {
             ...mapState(['adminInfo']),
         },

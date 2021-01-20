@@ -1,6 +1,5 @@
 <template>
     <div>
-        <head-top></head-top>
 		<section class="data_section">
 			<header class="section_title">数据统计</header>
 			<el-row :gutter="20" style="margin-bottom: 10px;">
@@ -21,8 +20,7 @@
 </template>
 
 <script>
-	import headTop from '../components/headTop'
-	import tendency from '../components/tendency' 
+	import tendency from '../components/tendency'
 	import dtime from 'time-formater'
 	import {userCount, orderCount, getUserCount, getOrderCount, adminDayCount, adminCount} from '@/api/getData'
     export default {
@@ -39,7 +37,6 @@
     		}
     	},
     	components: {
-    		headTop,
     		tendency,
     	},
     	mounted(){

@@ -1,6 +1,5 @@
 <template>
     <div>
-        <head-top></head-top>
         <div class="edit_container">
         	<quill-editor v-model="content"
                 ref="myQuillEditor"
@@ -16,7 +15,6 @@
 </template>
 
 <script>
-    import headTop from '../components/headTop'
     import { quillEditor } from 'vue-quill-editor'
 
     export default {
@@ -24,12 +22,11 @@
             return {
                 content: '<h3>文本编辑</h3>',
 			    editorOption: {
-			        
+
 		        }
             }
         },
     	components: {
-    		headTop,
     		quillEditor,
     	},
         computed: {

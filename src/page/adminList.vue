@@ -1,6 +1,5 @@
 <template>
     <div class="fillcontain">
-        <head-top></head-top>
         <div class="table_container">
             <el-table
 		      :data="tableData"
@@ -40,7 +39,6 @@
 </template>
 
 <script>
-    import headTop from '../components/headTop'
     import {adminList, adminCount} from '@/api/getData'
     export default {
         data(){
@@ -53,9 +51,6 @@
                 currentPage: 1,
             }
         },
-    	components: {
-    		headTop,
-    	},
         created(){
             this.initData();
         },
