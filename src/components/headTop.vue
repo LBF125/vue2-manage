@@ -12,9 +12,9 @@
 				<el-dropdown-item command="signout">退出</el-dropdown-item>
 			</el-dropdown-menu>
 		</el-dropdown>
-<!--        <span>-->
-<!--            {{ user_data.adminInfo.user_name}}-->
-<!--        </span>-->
+        <span>
+            {{ adminInfo.user_name}}
+        </span>
     </div>
 </template>
 
@@ -27,15 +27,12 @@
     	data(){
     		return {
     			baseImgPath,
-                user_data: {}
     		}
     	},
     	created(){
     		if (!this.adminInfo.id) {
     			this.getAdminData()
     		}
-            this.user_data = this.$store.state
-            console.log(this.user_data.adminInfo)
     	},
     	computed: {
     		...mapState(['adminInfo']),
